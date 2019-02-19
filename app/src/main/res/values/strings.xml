@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">SimpleLoginForm</string>
+    <string name="username_string">Username</string>
+    <string name="username_edit_text_hint">Enter Username</string>
+    <string name="password_edit_text_hint">Enter Password</string>
+    <string name="password_label_string">Password</string>
+    <string name="submit_button_string">Submit</string>
 </resources>
