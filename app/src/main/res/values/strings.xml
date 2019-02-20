@@ -5,4 +5,5 @@
     <string name="password_edit_text_hint">Enter Password</string>
     <string name="password_label_string">Password</string>
     <string name="submit_button_string">Submit</string>
+    <string name="reset_button_string">reset</string>
 </resources>
