@@ -67,11 +67,11 @@
         android:layout_height="wrap_content">
 
         <TextView
-            android:id="@+id/username_details"
+            android:id="@+id/username_details_textview"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
         <TextView
-            android:id="@+id/password-details"
+            android:id="@+id/password_details_textview"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 

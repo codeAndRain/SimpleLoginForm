@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
                 usernameDetails.setText(usernameEditText.getText().toString());
                 passwordDetails.setText(passwordEditText.getText().toString());
 
-                //Toast.makeText(MainActivity.this, username + ", " + password, Toast.LENGTH_SHORT).show();
+
             }
         });
     }
