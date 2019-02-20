@@ -18,19 +18,19 @@ public class MainActivity extends AppCompatActivity {
     private EditText usernameEditText;
     private EditText passwordEditText;
     private Button submitButton;
-    private TextView usernameDetails;
-    private TextView passwordDetails;
+    private TextView usernameDetailsTextView;
+    private TextView passwordDetailsTextView;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        
         usernameEditText = findViewById(R.id.user_name_edit_text);
         passwordEditText = findViewById(R.id.password_edit_text);
-        usernameDetails=findViewById(R.id.username_details);
-        passwordDetails=findViewById(R.id.password_details);
+        usernameDetailsTextView = findViewById(R.id.username_details_textview);
+        passwordDetailsTextView = findViewById(R.id.password_details_textview);
         submitButton = findViewById(R.id.submit_button);
 
 
@@ -40,8 +40,8 @@ public class MainActivity extends AppCompatActivity {
                 String username = usernameEditText.getText().toString();
                 String password = passwordEditText.getText().toString();
 
-                usernameDetails.setText(usernameEditText.getText().toString());
-                passwordDetails.setText(passwordEditText.getText().toString());
+                usernameDetailsTextView.setText(username);
+                passwordDetailsTextView.setText(password);
 
 
             }
