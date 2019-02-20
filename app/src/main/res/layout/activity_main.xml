@@ -16,6 +16,7 @@
             android:id="@+id/username_label_textview"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textColor="@android:color/holo_green_dark"
             android:text="@string/username_string" />
 
         <EditText
@@ -37,6 +38,7 @@
             android:id="@+id/password_label_textview"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textColor="@android:color/holo_green_dark"
             android:text="@string/password_label_string" />
 
         <EditText
@@ -55,6 +57,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="@dimen/general_margin"
+        android:background="@android:color/holo_green_dark"
         android:text="@string/submit_button_string" />
 
     <LinearLayout
