@@ -38,6 +38,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         resetButton.setOnClickListener(this);
     }
 
+
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
@@ -49,11 +50,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 passwordDetailsTextView.setText(password);
                 break;
             case R.id.reset_button:
-                usernameEditText.setText("");
-                passwordEditText.setText("");
-                usernameDetailsTextView.setText("");
-                passwordDetailsTextView.setText("");
+                setResetButton();
+
                 break;
         }
+    }
+
+    public void setResetButton() {
+        usernameEditText.setText("");
+        passwordEditText.setText("");
+        usernameDetailsTextView.setText("");
+        passwordDetailsTextView.setText("");
+
     }
 }
