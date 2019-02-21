@@ -9,9 +9,8 @@ import android.widget.TextView;
 
 /**
  * Assignment add validation to edit text fields
- *
+ * <p>
  * if an edit text is empty, show a toast that says "edit text cannot be empty", where edit text can be username or password
- *
  */
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -52,6 +51,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.reset_button:
                 usernameEditText.setText("");
                 passwordEditText.setText("");
+                usernameDetailsTextView.setText("");
+                passwordDetailsTextView.setText("");
                 break;
         }
     }
