@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_margin="20dp"
+    android:layout_margin="@dimen/margin"
     android:orientation="vertical"
     tools:context=".SecondActivity">
 
@@ -17,9 +17,9 @@
             android:id="@+id/username_label_textview"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="20dp"
-            android:hint="Username : "
-            android:textSize="20dp"
+            android:layout_margin="@dimen/margin"
+            android:hint="@string/username"
+            android:textSize="@dimen/txt_size"
             android:textStyle="bold" />
 
 
@@ -27,8 +27,8 @@
             android:id="@+id/username_details_textview"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="20dp"
-            android:textSize="20dp"
+            android:layout_margin="@dimen/margin"
+            android:textSize="@dimen/txt_size"
             android:textStyle="bold" />
     </LinearLayout>
 
@@ -41,9 +41,9 @@
             android:id="@+id/password_label_textview"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="20dp"
-            android:hint="Password : "
-            android:textSize="20dp"
+            android:layout_margin="@dimen/margin"
+            android:hint="@string/password"
+            android:textSize="@dimen/txt_size"
             android:textStyle="bold" />
 
 
@@ -51,8 +51,8 @@
             android:id="@+id/password_details_textview"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="20dp"
-            android:textSize="20dp"
+            android:layout_margin="@dimen/margin"
+            android:textSize="@dimen/txt_size"
             android:textStyle="bold" />
 
     </LinearLayout>

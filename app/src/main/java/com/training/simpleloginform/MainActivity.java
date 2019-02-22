@@ -37,10 +37,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.submit_button:
-                Intent i = new Intent(this, SecondActivity.class);
-                i.putExtra("username", usernameEditText.getText().toString());
-                i.putExtra("password", passwordEditText.getText().toString());
-                startActivity(i);
+                Intent intent = new Intent(this, SecondActivity.class);
+                intent.putExtra("username", usernameEditText.getText().toString());
+                intent.putExtra("password", passwordEditText.getText().toString());
+                startActivity(intent);
 
 
                 break;
