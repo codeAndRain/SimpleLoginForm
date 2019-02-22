@@ -36,9 +36,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     List<String> namesList = new ArrayList<>();
 
-    //Set<String> namesList = new HashSet<>();
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -72,12 +69,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 usernameDetailsTextView.setText(username);
                 passwordDetailsTextView.setText(password);
 
-                for(int i = 0; i < namesList.size(); i++){
-
                     if(!namesList.contains(username)){
                         namesList.add(username);
                     }
-                }
+
 
                 break;
             case R.id.reset_button:
