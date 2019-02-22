@@ -20,12 +20,13 @@
             android:textColor="@android:color/holo_green_dark"
             android:textStyle="bold" />
 
-        <EditText
+        <AutoCompleteTextView
             android:id="@+id/user_name_edit_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/general_margin"
-            android:hint="@string/username_edit_text_hint" />
+            android:hint="@string/username_edit_text_hint"
+            android:completionThreshold="1"/>
 
     </LinearLayout>
 
@@ -55,17 +56,17 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="horizontal">
 
         <Button
             android:id="@+id/submit_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
+            android:layout_marginLeft="@dimen/general_margin"
             android:layout_marginTop="@dimen/general_margin"
             android:layout_marginRight="@dimen/general_margin"
-            android:layout_marginLeft="@dimen/general_margin"
+            android:layout_weight="1"
             android:background="@android:color/holo_green_dark"
             android:text="@string/submit_button_string"
             android:textStyle="bold" />
