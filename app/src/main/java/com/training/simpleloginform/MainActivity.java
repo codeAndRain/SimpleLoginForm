@@ -62,13 +62,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 intent.putExtra("password", passwordEditText.getText().toString());
                 startActivity(intent);
 
-                usernameDetailsTextView.setText(username);
-                passwordDetailsTextView.setText(password);
+                String username = usernameEditText.getText().toString();
 
                     if(!namesList.contains(username)){
                         namesList.add(username);
                     }
-
 
                 break;
             case R.id.reset_button:
