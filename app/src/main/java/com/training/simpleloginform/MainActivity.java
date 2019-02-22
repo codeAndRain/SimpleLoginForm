@@ -13,6 +13,7 @@ import android.widget.TextView;
 
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -31,8 +32,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private TextView passwordDetailsTextView;
     private Button resetButton;
 
-    List<String> names = new ArrayList<>();
-    Set<String> namesList = new HashSet<>();
+    Names names = new Names();
+
+    List<String> namesList = new ArrayList<>();
+
+    //Set<String> namesList = new HashSet<>();
 
 
     @Override
@@ -47,14 +51,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         submitButton = findViewById(R.id.submit_button);
         resetButton = findViewById(R.id.reset_button);
 
-
-            names.add("Desmond");
-            names.add("Dean");
-            names.add("Iliana");
-            names.add("Sulekha");
+        namesList.addAll(names.getNames());
 
             usernameEditText.addTextChangedListener(this);
-            usernameEditText.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_dropdown_item_1line, names));
+            usernameEditText.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_dropdown_item_1line, namesList));
 
         submitButton.setOnClickListener(this);
         resetButton.setOnClickListener(this);
@@ -72,10 +72,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 usernameDetailsTextView.setText(username);
                 passwordDetailsTextView.setText(password);
 
-                names.add(username);
-                namesList.addAll(names);
-                names.clear();
-                names.addAll(namesList);
+                for(int i = 0; i < namesList.size(); i++){
+
+                    if(!namesList.contains(username)){
+                        namesList.add(username);
+                    }
+                }
 
                 break;
             case R.id.reset_button:
@@ -100,7 +102,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onTextChanged(CharSequence s, int start, int before, int count) {
 
-        usernameEditText.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_dropdown_item_1line, names));
+        usernameEditText.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_dropdown_item_1line, namesList));
 
     }
 
