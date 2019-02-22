@@ -3,22 +3,36 @@ package com.training.simpleloginform;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
+
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
 /**
  * Assignment add validation to edit text fields
  * <p>
  * if an edit text is empty, show a toast that says "edit text cannot be empty", where edit text can be username or password
  */
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener, TextWatcher {
 
-    private EditText usernameEditText;
+    private AutoCompleteTextView usernameEditText;
     private EditText passwordEditText;
     private Button submitButton;
     private Button resetButton;
 
+    Names names = new Names();
+
+    List<String> namesList = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,8 +43,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         submitButton = findViewById(R.id.submit_button);
         resetButton = findViewById(R.id.reset_button);
 
+        namesList.addAll(names.getNames());
+
+            usernameEditText.addTextChangedListener(this);
+            usernameEditText.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_dropdown_item_1line, namesList));
+
         submitButton.setOnClickListener(this);
         resetButton.setOnClickListener(this);
+
     }
 
     @Override
@@ -42,11 +62,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 intent.putExtra("password", passwordEditText.getText().toString());
                 startActivity(intent);
 
+                usernameDetailsTextView.setText(username);
+                passwordDetailsTextView.setText(password);
+
+                    if(!namesList.contains(username)){
+                        namesList.add(username);
+                    }
+
 
                 break;
             case R.id.reset_button:
                 setResetButton();
-
                 break;
         }
     }
@@ -57,4 +83,21 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     }
 
+    @Override
+    public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+    }
+
+    @Override
+    public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+        usernameEditText.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_dropdown_item_1line, namesList));
+
+    }
+
+    @Override
+    public void afterTextChanged(Editable s) {
+
+
+    }
 }
