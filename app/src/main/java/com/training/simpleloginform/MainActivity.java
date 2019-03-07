@@ -59,12 +59,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         submitButton.setOnClickListener(this);
         resetButton.setOnClickListener(this);
+    }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
         sharedPreferences = getSharedPreferences(APP_SHARED_PREF, Context.MODE_PRIVATE);
         prefUserName = sharedPreferences.getString(PREF_KEY_USERNAME, "");
         prefPwd = sharedPreferences.getString(PREF_KEY_PWD, "");
         prefIsAlreadyLoggedIn = sharedPreferences.getBoolean(PREF_KEY_USER_LOGGED_IN, false);
-
     }
 
     @Override
